@@ -31,16 +31,9 @@ Simple, clean project structure
 
 📦 Project Structure
 
-network_security_scanner/
-│── app.py
-│── requirements.txt
-│── README.md
-│── TODO.md
-│── static/
-│   ├── style.css
-│   └── script.js
-│── templates/
-│   └── index.html
+
+<img width="155" height="155" alt="image" src="https://github.com/user-attachments/assets/e86dc3fe-753c-411f-8cd7-1e033cc0fa2f" />
+
 
 
 🛠️ Prerequisites
