@@ -30,6 +30,7 @@ Cross-platform support (Windows/Linux)
 Simple, clean project structure
 
 📦 Project Structure
+
 network_security_scanner/
 │── app.py
 │── requirements.txt
@@ -40,6 +41,7 @@ network_security_scanner/
 │   └── script.js
 │── templates/
 │   └── index.html
+
 
 🛠️ Prerequisites
 Windows Requirements
@@ -175,5 +177,6 @@ Screenshots:
 
 This project is open-source under the MIT License.
 Feel free to modify and use for learning or development.
+
 
 
