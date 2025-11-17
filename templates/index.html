@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Security Scanner & Firewall Visualizer</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Network Security Scanner & Firewall Visualizer</h1>
+
+        <!-- Network Scanner Section -->
+        <section id="scanner">
+            <h2>Network Scanner</h2>
+            <form id="scan-form">
+                <label for="target">Target IP/Hostname:</label>
+                <input type="text" id="target" name="target" required>
+
+                <label for="scan-type">Scan Type:</label>
+                <select id="scan-type" name="scan-type">
+                    <option value="tcp_syn">TCP SYN Scan</option>
+                    <option value="udp">UDP Scan</option>
+                    <option value="full_connect">Full Connect Scan</option>
+                </select>
+
+                <button type="submit">Start Scan</button>
+            </form>
+            <div id="scan-results"></div>
+        </section>
+
+        <!-- Firewall Simulator Section -->
+        <section id="firewall">
+            <h2>Firewall Simulator</h2>
+
+            <!-- Add Rule Form -->
+            <h3>Add Firewall Rule</h3>
+            <form id="rule-form">
+                <label for="action">Action:</label>
+                <select id="action" name="action" required>
+                    <option value="allow">Allow</option>
+                    <option value="deny">Deny</option>
+                </select>
+
+                <label for="source-ip">Source IP:</label>
+                <input type="text" id="source-ip" name="source_ip" placeholder="e.g., 192.168.1.1 or *" required>
+
+                <label for="dest-ip">Destination IP:</label>
+                <input type="text" id="dest-ip" name="destination_ip" placeholder="e.g., 192.168.1.2 or *" required>
+
+                <label for="port">Port:</label>
+                <input type="text" id="port" name="port" placeholder="e.g., 80 or *" required>
+
+                <label for="protocol">Protocol:</label>
+                <select id="protocol" name="protocol" required>
+                    <option value="tcp">TCP</option>
+                    <option value="udp">UDP</option>
+                </select>
+
+                <label for="priority">Priority:</label>
+                <input type="number" id="priority" name="priority" value="1" min="1" required>
+
+                <button type="submit">Add Rule</button>
+            </form>
+
+            <!-- Rules List -->
+            <h3>Current Rules</h3>
+            <div id="rules-list"></div>
+
+            <!-- Simulation Form -->
+            <h3>Simulate Traffic</h3>
+            <form id="simulate-form">
+                <label for="sim-source-ip">Source IP:</label>
+                <input type="text" id="sim-source-ip" name="source_ip" required>
+
+                <label for="sim-dest-ip">Destination IP:</label>
+                <input type="text" id="sim-dest-ip" name="destination_ip" required>
+
+                <label for="sim-port">Port:</label>
+                <input type="text" id="sim-port" name="port" required>
+
+                <label for="sim-protocol">Protocol:</label>
+                <select id="sim-protocol" name="protocol" required>
+                    <option value="tcp">TCP</option>
+                    <option value="udp">UDP</option>
+                </select>
+
+                <button type="submit">Simulate</button>
+            </form>
+            <div id="simulation-result"></div>
+        </section>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
